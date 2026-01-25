@@ -15,7 +15,14 @@ pipeline {
         }
         stage('Package') {
             steps {
-                sh 'python3 setup.py bdist_wheel'
+                echo 'Packaging into Wheel file...'
+                // Install 'build' to create the wheel
+                sh 'pip install build'
+                // Generates the .whl file inside the /dist folder
+                sh 'python3 -m build --wheel'
+                
+                // Optional: Verify the file exists
+                sh 'ls -l dist/'
             }
         }
     }
