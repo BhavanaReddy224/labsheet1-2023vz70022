@@ -5,3 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "calculator"
 version = "1.0.0"
+
+[tool.setuptools]
+# Use py-modules for single-file projects
+py-modules = ["calculator"]
