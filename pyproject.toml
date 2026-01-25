@@ -7,5 +7,5 @@ name = "calculator"
 version = "1.0.0"
 
 [tool.setuptools]
-# This tells Jenkins to only package the calculator module, not the tests
-modules = ["calculator"]
+# Use py-modules for single-file projects
+py-modules = ["calculator"]
